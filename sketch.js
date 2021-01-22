@@ -92,11 +92,18 @@ function mouseReleased(){
     gameState = "launched";
 }
 
+
+
+
+
+
 function keyPressed(){
-    if(keyCode === 32){
+    if(keyCode === 32)
+    {
+    bird.trajectory =[];
        slingshot.attach(bird.body);
-    }
-}
+       Matter.Body.setPosition(bird.body, {x: 200 , y: 50});
+}}
 
 async function getBackgroundImg(){
     var response = await fetch("http://worldtimeapi.org/api/timezone/Asia/Kolkata");
